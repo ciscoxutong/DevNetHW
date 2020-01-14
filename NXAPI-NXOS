@@ -17,7 +17,7 @@ payload={
     "type": "cli_conf",
     "chunk": "0",
     "sid": "sid",
-    "input": "conf t",
+    "input": "conf t;int Lo1;ip add 1.1.1.1 255.255.255.255;no shu",
     "output_format": "json"
   }
 
