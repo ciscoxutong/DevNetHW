@@ -6,7 +6,7 @@ import json
 """
 Modify these please
 """
-switchuser='admin'
+switchuser='admin1'
 switchpassword='Cisco123'
 
 url='http://10.10.20.58/ins'
@@ -23,5 +23,3 @@ payload={
 
 }
 response = requests.post(url,data=json.dumps(payload), headers=myheaders,auth=(switchuser,switchpassword)).json()
-
-print(response)
