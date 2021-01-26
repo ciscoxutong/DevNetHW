@@ -1,0 +1,25 @@
+#  When using NX-API, all exec commands, such as the copy command in the input field below, require the cli_conf option, as shown in the type field below.
+
+import requests
+import json
+
+"""
+Modify these please
+"""
+switchuser='admin1'
+switchpassword='Cisco123'
+
+url='http://10.10.20.58/ins'
+myheaders={'content-type':'application/json'}
+payload={
+  "ins_api": {
+    "version": "1.0",
+    "type": "cli_conf",
+    "chunk": "0",
+    "sid": "sid",
+    "input": "conf t;int Lo1;ip add 1.1.1.1 255.255.255.255;no shu",
+    "output_format": "json"
+  }
+
+}
+response = requests.post(url,data=json.dumps(payload), headers=myheaders,auth=(switchuser,switchpassword)).json()
